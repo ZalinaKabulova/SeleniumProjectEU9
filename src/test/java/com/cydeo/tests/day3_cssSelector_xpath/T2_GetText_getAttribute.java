@@ -66,6 +66,6 @@ public class T2_GetText_getAttribute {
         //PS: Inspect and decide which locator you should be using to locate web
         //elements
 
-
+//
     }
 }
