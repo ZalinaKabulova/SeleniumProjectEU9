@@ -1,6 +1,7 @@
 package com.cydeo.tests.day7_webTables_utilities_javaFaker;
 
 import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.CRM_Utilities;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,12 +44,48 @@ public class T3_CRM_LOGIN {
 
 
         //5. Click to `Log In` button
-        WebElement logInBtn = driver.findElement(By.xpath("//input[@type='submit']"));
+        WebElement logInBtn = driver.findElement(By.xpath("input[@value='Log In']"));
         logInBtn.click();
 
         //6. Verify title is as expected:
-        BrowserUtils.verifyTitle(driver,"Portal");
+        BrowserUtils.verifyTitle(driver, "Portal");
         //Expected: Porta
 
     }
+
+    @Test
+    public void crm_login_test2() {
+        //2. Go to : https://login1.nextbasecrm.com/
+        driver.get("https://login1.nextbasecrm.com/");
+
+        //Calling my utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver);
+
+        //helpdesk1@cybertekschool.com  UserUser
+
+        //6. Verify title is as expected:
+        //Expected: Portal
+        BrowserUtils.verifyTitle(driver,"Portal");
+
+
+    }
+
+    @Test
+    public void crm_login_test3() {
+        //2. Go to : https://login1.nextbasecrm.com/
+        driver.get("https://login1.nextbasecrm.com/");
+
+        //Calling my utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver,"helpdesk2@cybertekschool.com","UserUser");
+
+        //helpdesk1@cybertekschool.com  UserUser
+
+        //6. Verify title is as expected:
+        //Expected: Portal
+        BrowserUtils.sleep(2);
+        BrowserUtils.verifyTitle(driver,"Portal");
+
+
+    }
+
 }
