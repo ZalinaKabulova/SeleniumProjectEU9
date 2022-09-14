@@ -32,7 +32,7 @@ public class TestNG_Intro {
 
         //ASSERT EQUALS: compare 2 of the same things
         String actual = "apple";
-        String expected = "apple1";
+        String expected = "apple";
 
         Assert.assertEquals(actual, expected);
 
@@ -45,7 +45,7 @@ public class TestNG_Intro {
 
 
         //ASSERT true
-        String actual = "apple";
+        String actual = "apple2";
         String expected = "apple2";
 
         Assert.assertTrue(actual.equals(expected));
