@@ -18,6 +18,17 @@ public class DynamicControlsPage {
     @FindBy(css = "div#loading")
     public WebElement loadingBar;
 
-    @FindBy(css = "input[label='blah']")
+    //@FindBy(css = "input[label='blah']")
+    @FindBy(css = "input[type='checkbox']")
     public WebElement checkbox;
+
+    //@FindBy(xpath = "//p[@id='message']")
+    @FindBy(css = "p[id='message']")
+    public WebElement message;
+
+    @FindBy(xpath = "//button[.='Enable']")
+    public WebElement enableButton;
+
+    @FindBy(css = "input[type='text']")
+    public WebElement inputBox;
 }
